@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/atorgaso/AndroidStudioProjects/SuvantoCare_application/app/src/main/res/drawable/baseline_face_24.xml" value="0.1595" />
+        <entry key="..\:/Users/atorgaso/AndroidStudioProjects/SuvantoCare_application/app/src/main/res/drawable/baseline_person_add_24.xml" value="0.25" />
+        <entry key="..\:/Users/atorgaso/AndroidStudioProjects/SuvantoCare_application/app/src/main/res/layout/content_main.xml" value="0.3555253623188406" />
+        <entry key="..\:/Users/atorgaso/AndroidStudioProjects/SuvantoCare_application/app/src/main/res/layout/fragment_add_patient.xml" value="0.3555253623188406" />
+        <entry key="..\:/Users/atorgaso/AndroidStudioProjects/SuvantoCare_application/app/src/main/res/layout/fragment_camera.xml" value="0.1" />
+        <entry key="..\:/Users/atorgaso/AndroidStudioProjects/SuvantoCare_application/app/src/main/res/layout/fragment_data.xml" value="0.15324675324675324" />
+        <entry key="..\:/Users/atorgaso/AndroidStudioProjects/SuvantoCare_application/app/src/main/res/menu/activity_main_drawer.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/atorgaso/AndroidStudioProjects/SuvantoCare_application/app/src/main/res/menu/main.xml" value="0.36666666666666664" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DataFragment">
+
+    <ImageView
+        android:id="@+id/patientPhotoView"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_margin="20dp"
+        android:src="@drawable/baseline_face_24"
+        tools:layout_editor_absoluteX="20dp"
+        tools:layout_editor_absoluteY="20dp" />
+
+    <TextView
+        android:id="@+id/patientNameView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Name:"
+        tools:layout_editor_absoluteX="186dp"
+        tools:layout_editor_absoluteY="25dp" />
+
+    <TextView
+        android:id="@+id/patientBirthdayView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Birthday:"
+        tools:layout_editor_absoluteX="186dp"
+        tools:layout_editor_absoluteY="50dp" />
+
+    <TextView
+        android:id="@+id/patientAddressView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Address:"
+        tools:layout_editor_absoluteX="186dp"
+        tools:layout_editor_absoluteY="75dp" />
+
+    <TextView
+        android:id="@+id/patientDiseaseView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Disease:"
+        tools:layout_editor_absoluteX="186dp"
+        tools:layout_editor_absoluteY="100dp" />
+
+    <com.example.suvantocare_application.sensorData
+        android:id="@+id/temperaturesensor"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        app:layout_editor_absoluteX="5dp"
+        app:layout_editor_absoluteY="500dp" />
+
+    <com.example.suvantocare_application.muRataData
+        android:id="@+id/muratadata"
+        android:layout_width="400dp"
+        android:layout_height="200dp"
+        app:layout_editor_absoluteX="5dp"
+        app:layout_editor_absoluteY="500dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
