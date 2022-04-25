@@ -7,7 +7,7 @@ import android.graphics.Paint
 import android.util.AttributeSet
 import android.view.View
 
-class sensorData @JvmOverloads constructor(
+class SensorData @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0
 ) : View(context, attrs, defStyleAttr) {
     // your helper variables etc. can be here
@@ -83,4 +83,5 @@ class sensorData @JvmOverloads constructor(
         setMeasuredDimension(w, h)
         // Android uses this to determine the exact size of your component on screen
     }
+
 }

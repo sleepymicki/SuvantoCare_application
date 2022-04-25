@@ -1,4 +1,4 @@
-package com.example.suvantocare_application
+package com.example.suvantocare_application.muRata
 
 import android.content.Context
 import android.graphics.Color
@@ -6,6 +6,7 @@ import android.util.AttributeSet
 import android.view.animation.AnimationUtils
 import android.widget.LinearLayout
 import android.widget.TextView
+import com.example.suvantocare_application.R
 
 class muRataData @JvmOverloads constructor(
     context: Context, attrs: AttributeSet? = null, defStyleAttr: Int = 0

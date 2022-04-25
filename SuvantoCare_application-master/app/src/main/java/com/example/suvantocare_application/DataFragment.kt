@@ -9,7 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.suvantocare_application.databinding.FragmentDataBinding
 import com.google.gson.GsonBuilder
-import org.eclipse.paho.android.service.MqttAndroidClient
+import info.mqtt.android.service.MqttAndroidClient
 import org.eclipse.paho.client.mqttv3.*
 import java.text.SimpleDateFormat
 import java.util.*
@@ -55,7 +55,8 @@ class DataFragment : Fragment() {
         val root: View = binding.root
 
         // Create the client!
-        mqttAndroidClient = MqttAndroidClient(activity as Context, serverUri, clientId)
+        //mqttAndroidClient = MqttAndroidClient(activity as Context, serverUri, clientId)
+        mqttAndroidClient = MqttAndroidClient(context as Context, serverUri, clientId)
 
         // CALLBACKS, these will take care of the connection if something unexpected happen
         mqttAndroidClient?.setCallback(object : MqttCallbackExtended {
@@ -80,6 +81,9 @@ class DataFragment : Fragment() {
                 try {
                     val result = String(message.payload)
                     Log.d("ADVTECH", result)
+                    binding.textViewTemperature.text = result
+
+                    val gson = GsonBuilder().setPrettyPrinting().create()
 
 
 

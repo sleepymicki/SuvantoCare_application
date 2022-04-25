@@ -67,18 +67,30 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.181" />
 
-    <com.example.suvantocare_application.sensorData
-        android:id="@+id/temperaturesensor"
-        android:layout_width="400dp"
-        android:layout_height="200dp"
-        app:layout_constraintBottom_toTopOf="@+id/muratadata"
+    <TextView
+        android:id="@+id/textView_temperature"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Waiting..."
+        android:textSize="25sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.827" />
+        app:layout_constraintVertical_bias="0.371" />
 
-    <com.example.suvantocare_application.muRataData
+    <com.example.suvantocare_application.SensorData
+        android:id="@+id/mytemperatureviewtest"
+        android:layout_width="230dp"
+        android:layout_height="230dp"
+        android:layout_marginBottom="208dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.example.suvantocare_application.muRata.muRataData
         android:id="@+id/muratadata"
         android:layout_width="400dp"
         android:layout_height="200dp"
