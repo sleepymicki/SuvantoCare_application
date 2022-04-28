@@ -11,7 +11,6 @@ import com.example.suvantocare_application.databinding.FragmentDataBinding
 import com.google.gson.GsonBuilder
 import info.mqtt.android.service.MqttAndroidClient
 import org.eclipse.paho.client.mqttv3.*
-import java.text.SimpleDateFormat
 import java.util.*
 
 class DataFragment : Fragment() {
@@ -26,6 +25,7 @@ class DataFragment : Fragment() {
 // for example, your student code
     var clientId = "a:k2936e:a1901311ab"
     val subscriptionTopic = "iot-2/type/esp32/id/esp666/evt/status1/fmt/json"
+    val subscriptionMqttTopic = "iot-2/type/esp32/id/murata666/evt/status1/fmt/json"
 
     // username and password not needed if using local mosquitto broker
     val mqttUsername = "a-k2936e-d93gpt8bgx"
@@ -46,6 +46,10 @@ class DataFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    fun isNumericToX(toCheck: String): Boolean {
+        return toCheck.toDoubleOrNull() != null
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -64,7 +68,9 @@ class DataFragment : Fragment() {
                 if (reconnect) {
                     Log.d("ADVTECH", "reconnected to MQTT")
                     // we have to subscribe again because of the reconnection
-                    subscribeToTopic()
+                    subscribeToTopic(subscriptionTopic)
+                    subscribeToTopic(subscriptionMqttTopic)
+
                 } else {
                     Log.d("ADVTECH", "connected to MQTT")
                 }
@@ -81,11 +87,22 @@ class DataFragment : Fragment() {
                 try {
                     val result = String(message.payload)
                     Log.d("ADVTECH", result)
-                    binding.textViewTemperature.text = result
 
                     val gson = GsonBuilder().setPrettyPrinting().create()
 
+                    if(isNumericToX(result))
+                    {
 
+                        binding.mytemperatureviewtest.setTemperature(result.toFloat())
+                        Log.d("ADVTECH", "Lämpötila")
+                    }
+                    else
+                    {
+                        var item : MuRata = gson.fromJson(result, MuRata::class.java)
+                        var text = item.HR + "-" + item.Time
+                        binding.muratadata.addData(text)
+                        Log.d("ADVTECH", "MuRata")
+                    }
 
                 } catch (e: Exception) {
                     Log.d("ADVTECH", e.toString());
@@ -113,7 +130,8 @@ class DataFragment : Fragment() {
                     disconnectedBufferOptions.isPersistBuffer = false
                     disconnectedBufferOptions.isDeleteOldestMessages = false
                     mqttAndroidClient!!.setBufferOpts(disconnectedBufferOptions)
-                    subscribeToTopic()
+                    subscribeToTopic(subscriptionTopic)
+                    subscribeToTopic(subscriptionMqttTopic)
                 }
 
                 override fun onFailure(asyncActionToken: IMqttToken, exception: Throwable) {
@@ -128,9 +146,9 @@ class DataFragment : Fragment() {
     }
 
     // subscriber method
-    fun subscribeToTopic() {
+    fun subscribeToTopic(topicToSubscribeTo : String) {
         try {
-            mqttAndroidClient?.subscribe(subscriptionTopic, 0, null, object : IMqttActionListener {
+            mqttAndroidClient?.subscribe(topicToSubscribeTo, 0, null, object : IMqttActionListener {
                 override fun onSuccess(asyncActionToken: IMqttToken) {
                     Log.d("ADVTECH", "Subscribed!")
                 }
